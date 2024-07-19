@@ -21,6 +21,10 @@
 	ul.wp-block-navigation__submenu-container .wp-block-navigation-item {
 		margin: 2px 0;
 	}
+
+	.main-menu {
+		margin: 0;
+	}
 }
 
 /**
@@ -35,17 +39,17 @@
 		display: inline-block;
 		width: .5em;
 		height: .7em;
-		background-color: #ecf0f1;
+		background-color: var( --wp--preset--color--contrast );
 		margin-left: .1em;
 		animation: blink 1s step-start infinite;
-		background-color: white;
-		box-shadow: 0 0 1px #fff,
-			0 0 1px #fff,
-			0 0 2px var(--wp--preset--color--custom-link),
-			0 0 3px var(--wp--preset--color--custom-link),
-			0 0 4px var(--wp--preset--color--custom-link),
-			0 0 5px var(--wp--preset--color--custom-link),
-			0 0 7px var(--wp--preset--color--custom-link);
+		box-shadow:
+			0 0 1px var( --wp--preset--color--white ),
+			0 0 1px var( --wp--preset--color--white ),
+			0 0 2px var( --wp--preset--color--custom-link ),
+			0 0 3px var( --wp--preset--color--custom-link ),
+			0 0 4px var( --wp--preset--color--custom-link ),
+			0 0 5px var( --wp--preset--color--custom-link ),
+			0 0 7px var( --wp--preset--color--custom-link );
 	}
 }
 
@@ -128,9 +132,6 @@
 		0 0 2px #0fa;
 }
 
-.main-menu {
-	margin: 0;
-}
 
 /*
  * Sponsors

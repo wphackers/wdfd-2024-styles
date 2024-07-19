@@ -24,7 +24,8 @@
 }
 
 /**
- * Caret effect. Used in the header
+ * Caret effect.
+ * Used in the header
  */
  .caret {
 	position: relative;
@@ -54,7 +55,7 @@
 	}
 }
 
-/*
+/**
  * Scanlines effect
  */
 .scanlines::before {
@@ -105,9 +106,9 @@
  */
 .neonify {
 	text-shadow:
-		0 0 1px #fff
-		0 0 1px #fff
-		0 0 2px var(--wp--preset--color--custom-link)
+		0 0 1px #fff,
+		0 0 1px #fff,
+		0 0 2px var(--wp--preset--color--custom-link),
 		0 0 3px var(--wp--preset--color--custom-link),
 		0 0 4px var(--wp--preset--color--custom-link),
 		0 0 5px var(--wp--preset--color--custom-link),
@@ -116,7 +117,15 @@
 
 .neon-text {
 	color: #fff;
-	text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa;
+	text-shadow:
+		0 0 2px #fff,
+		0 0 2px #fff,
+		0 0 2px #fff,
+		0 0 2px #0fa,
+		0 0 2px #0fa,
+		0 0 2px #0fa,
+		0 0 2px #0fa,
+		0 0 2px #0fa;
 }
 
 .main-menu {

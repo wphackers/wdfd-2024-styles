@@ -1,0 +1,15 @@
+{
+  "name": "wdfd-2024-styles",
+  "version": "1.0.0",
+  "description": "Add styles for Twenty Twenty Four theme, for WordPress Day for Developers 2024",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass src/main.scss public/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

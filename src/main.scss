@@ -23,6 +23,37 @@
 	}
 }
 
+/**
+ * Caret effect. Used in the header
+ */
+ .caret {
+	position: relative;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: .5em;
+		height: .7em;
+		background-color: #ecf0f1;
+		margin-left: .1em;
+		animation: blink 1s step-start infinite;
+		background-color: white;
+		box-shadow: 0 0 1px #fff,
+			0 0 1px #fff,
+			0 0 2px var(--wp--preset--color--custom-link),
+			0 0 3px var(--wp--preset--color--custom-link),
+			0 0 4px var(--wp--preset--color--custom-link),
+			0 0 5px var(--wp--preset--color--custom-link),
+			0 0 7px var(--wp--preset--color--custom-link);
+	}
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
 /*
  * Scanlines effect
  */
@@ -44,8 +75,8 @@
  * Comment form
  */
 .comment-form .dark {
-	background-color: var(--wp--preset--color--base-2);
-	color: var(--wp--preset--color--contrast);
+	background-color: var( --wp--preset--color--base-2 );
+	color: var( --wp--preset--color--contrast );
 }
 
 /*
@@ -53,12 +84,12 @@
  */
 .contact-form :focus {
 	outline-width: 1px;
-	outline-color: var(--wp--preset--color--custom-focus);
+	outline-color: var( --wp--preset--color--custom-focus );
 	outline-offset: -1px;
-}
 
-.contact-form .contact-form__input-error {
-	color: #ff007b;
+	.contact-form__input-error {
+		color: #ff007b;
+	}
 }
 
 .contact-form__warning-icon {
@@ -73,99 +104,19 @@
  * Neon effect
  */
 .neonify {
-	text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px var(--wp--preset--color--custom-link), 0 0 3px var(--wp--preset--color--custom-link), 0 0 4px var(--wp--preset--color--custom-link), 0 0 5px var(--wp--preset--color--custom-link), 0 0 7px var(--wp--preset--color--custom-link);
+	text-shadow:
+		0 0 1px #fff
+		0 0 1px #fff
+		0 0 2px var(--wp--preset--color--custom-link)
+		0 0 3px var(--wp--preset--color--custom-link),
+		0 0 4px var(--wp--preset--color--custom-link),
+		0 0 5px var(--wp--preset--color--custom-link),
+		0 0 7px var(--wp--preset--color--custom-link);
 }
 
 .neon-text {
 	color: #fff;
 	text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa, 0 0 2px #0fa;
-}
-
-/**
- * Glitch effect
- */
-.glitch {
-	position: relative;
-	display: inline-block;
-}
-
-.glitch strong {
-	font-weight: bold;
-	font-size: 4rem;
-	position: relative;
-	display: inline-block;
-	animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards 0ms, glitch 2s ease infinite 2s alternate-reverse;
-}
-
-.glitch::before,
-.glitch::after {
-	content: "#WD4D";
-	font-weight: bold;
-	font-size: 4rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	clip-path: inset(0 0 0 0);
-	animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards, glitch 2s ease infinite alternate-reverse;
-}
-
-.glitch::before {
-	animation-delay: 120ms;
-	clip-path: inset(calc(100% / 3 * var(--index)) 0 calc(100% / 3 * (2 - var(--index))) 0);
-}
-
-.glitch::after {
-	animation-delay: 240ms;
-	clip-path: inset(calc(100% / 3 * var(--index)) 0 calc(100% / 3 * (2 - var(--index))) 0);
-}
-
-@keyframes stack {
-	0% {
-		opacity: 0;
-		transform: translateX(-50%);
-		text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-	}
-	
-	;
-				  60% {
-		opacity: .5;
-		transform: translateX(50%);
-	}
-	
-	80% {
-		transform: none;
-		opacity: 1;
-		text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-	}
-	
-	100% {
-		text-shadow: none;
-	}
-}
-
-/**
- * Caret effect. Used in the header
- */
-.caret {
-	position: relative;
-}
-
-.caret::after {
-	content: '';
-	display: inline-block;
-	width: .5em;
-	height: .7em;
-	background-color: #ecf0f1;
-	margin-left: .1em;
-	animation: blink 1s step-start infinite;
-	background-color: white;
-	box-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px var(--wp--preset--color--custom-link), 0 0 3px var(--wp--preset--color--custom-link), 0 0 4px var(--wp--preset--color--custom-link), 0 0 5px var(--wp--preset--color--custom-link), 0 0 7px var(--wp--preset--color--custom-link);
-}
-
-@keyframes blink {
-	50% {
-		opacity: 0;
-	}
 }
 
 .main-menu {

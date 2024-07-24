@@ -1,4 +1,23 @@
 /**
+ * Background grid - reusable effect
+ * Grid: 3x3
+ * Image defined by using background image, with lines
+ */
+ @mixin grid-3x3 {
+	background-color: var(--wp--preset--color--base);
+	background-image:
+		linear-gradient( to right, var(--wp--preset--color--custom-dark ) 1px, transparent 1px ),
+		linear-gradient( to bottom, var(--wp--preset--color--custom-dark ) 1px, transparent 1px );
+	background-size: 3px 3px;
+	border: 3px solid var( --wp--preset--color--base-2 );
+	border-radius: 4px;
+}
+
+.grid-3x3 {
+	@include grid-3x3;
+}
+
+/**
  *  Header
  */
  .cover-header-template {
@@ -45,11 +64,11 @@
 		box-shadow:
 			0 0 1px var( --wp--preset--color--white ),
 			0 0 1px var( --wp--preset--color--white ),
-			0 0 2px var( --wp--preset--color--custom-link ),
-			0 0 3px var( --wp--preset--color--custom-link ),
-			0 0 4px var( --wp--preset--color--custom-link ),
-			0 0 5px var( --wp--preset--color--custom-link ),
-			0 0 7px var( --wp--preset--color--custom-link );
+			0 0 2px var( --wp--preset--color--custom-menu-link ),
+			0 0 3px var( --wp--preset--color--custom-menu-link ),
+			0 0 4px var( --wp--preset--color--custom-menu-link ),
+			0 0 5px var( --wp--preset--color--custom-menu-link ),
+			0 0 7px var( --wp--preset--color--custom-menu-link );
 	}
 }
 
@@ -58,6 +77,10 @@
 		opacity: 0;
 	}
 }
+
+/**
+ * one day, two tracks, 60 attendees
+ */
 
 /**
  * Scanlines effect
@@ -76,6 +99,13 @@
 	z-index: 100;
 }
 
+/**
+ * Highlights
+ */
+.highlight-icon {
+	filter: contrast( 10 ) brightness( 10 ) grayscale( 1 );
+}
+
 /*
  * Comment form
  */
@@ -87,13 +117,15 @@
 /*
  * Contact Form
  */
-.contact-form :focus {
-	outline-width: 1px;
-	outline-color: var( --wp--preset--color--custom-focus );
-	outline-offset: -1px;
-
+.contact-form {
 	.contact-form__input-error {
-		color: #ff007b;
+		color: var( --wp--preset--color--custom-form-error );
+	}
+
+	&:focus {
+		outline-width: 1px;
+		outline-color: var( --wp--preset--color--custom-focus );
+		outline-offset: -1px;
 	}
 }
 
@@ -105,6 +137,10 @@
 	display: none;
 }
 
+.wp-site-blocks .contact-form-submission .go-back-message .link {
+	color: var( --wp--preset--color--custom-link ) !important;
+}
+
 /**
  * Neon effect
  */
@@ -112,11 +148,11 @@
 	text-shadow:
 		0 0 1px #fff,
 		0 0 1px #fff,
-		0 0 2px var(--wp--preset--color--custom-link),
-		0 0 3px var(--wp--preset--color--custom-link),
-		0 0 4px var(--wp--preset--color--custom-link),
-		0 0 5px var(--wp--preset--color--custom-link),
-		0 0 7px var(--wp--preset--color--custom-link);
+		0 0 2px var( --wp--preset--color--custom-menu-link ),
+		0 0 3px var( --wp--preset--color--custom-menu-link ),
+		0 0 4px var( --wp--preset--color--custom-menu-link ),
+		0 0 5px var( --wp--preset--color--custom-menu-link ),
+		0 0 7px var( --wp--preset--color--custom-menu-link );
 }
 
 .neon-text {
@@ -125,13 +161,12 @@
 		0 0 2px #fff,
 		0 0 2px #fff,
 		0 0 2px #fff,
-		0 0 2px #0fa,
-		0 0 2px #0fa,
-		0 0 2px #0fa,
-		0 0 2px #0fa,
-		0 0 2px #0fa;
+		0 0 2px var( --wp--preset--color--custom-dark ),
+		0 0 2px var( --wp--preset--color--custom-dark ),
+		0 0 2px var( --wp--preset--color--custom-dark ),
+		0 0 2px var( --wp--preset--color--custom-dark ),
+		0 0 2px var( --wp--preset--color--custom-dark );
 }
-
 
 /*
  * Sponsors
@@ -143,7 +178,7 @@
 }
 
 .sponsors .wp-block-post.wcb_sponsor {
-	background-color: white;
+	background-color: var( --wp--preset--color--white );
 	position: relative;
 	border-radius: 8px;
 	filter: invert(0.8) grayscale(0.7);
@@ -198,8 +233,8 @@
 /*
  * Sponsor single page - Header
  */
-.sponser-header {
-	background: white;
+.sponsor-header {
+	background: var( --wp--preset--color--white );
 }
 
 .cover-blur .wp-block-cover__image-background {
@@ -274,8 +309,15 @@
  * Subscribe form
  */
 #subscribe-email input {
-	background-color: var(--wp--preset--color--base-2);
-	color: var(--wp--preset--color--contrast);
+	background-color: var( --wp--preset--color--base-2 );
+	color: var( --wp--preset--color--contrast );
+}
+
+
+button:hover,
+input[type="submit"]:hover {
+	box-shadow: 0 0 3px var( --wp--preset--color--custom-link ) inset;
+	color: var( --wp--preset--color--custom-link );
 }
 
 /**
@@ -313,20 +355,28 @@
 	filter: none;
 }
 
-/*
- * Mapbox
+.news-title a {
+	font-family: var(--wp--preset--font-family--chivo-mono) !important;
+}
+
+.news-image img {
+	filter: blur( 2px ) grayscale( 0.8 );
+}
+
+/**
+ * Location - Mapbox
  */
 .wp-block-jetpack-map .mapboxgl-popup-content {
 	background-color: var(--wp--preset--color--base);
-	color: white;
+	color: var( --wp--preset--color--white );
 }
 
 .wp-block-jetpack-map__gm-container .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-	border-top-color: var(--wp--preset--color--base);
+	border-top-color: var( --wp--preset--color--base );
 }
 
 .mapboxgl-popup-close-button {
-	color: var(--wp--preset--color--custom-link);
+	color: var( --wp--preset--color--custom-link );
 }
 
 /**
@@ -345,13 +395,372 @@
 .speaker-avatar-hover {
 	position: absolute;
 	top: 0;
-	filter: sepia(1) hue-rotate(45deg);
+	filter: sepia( 1 ) hue-rotate( 45deg );
 	margin: 0;
 	transition: filter ease-in 500ms;
 }
 
-
-
 .type-wcb_speaker:hover .speaker-avatar-hover {
 	filter: none;
+}
+
+/**
+ * Schedule page
+ */
+.wordcamp-schedule__day {
+	background-color: var( --wp--preset--color--base-2 );
+}
+
+#wordcamp-schedule__day-2024-10-19-tracks-all {
+	.wordcamp-schedule__column-header {
+		background-color: var( --wp--preset--color--base-2 );
+	}
+
+	.wordcamp-schedule__time-slot-header {
+		box-shadow: 0 0 1px 1px var( --wp--preset--color--custom-dark );
+	}
+
+	.wordcamp-schedule__column-header {
+		display: none;
+	}
+}
+
+.schedule-sessions {
+	.wcb_session {
+		margin: 0;
+		border-top: 1px solid var( --wp--preset--color--custom-dark );
+		border-left: 1px solid var( --wp--preset--color--custom-dark );
+		border-right: 1px solid var( --wp--preset--color--custom-dark );
+		border-bottom: 1px solid transparent;
+		background-color: var( --wp--preset--color--base-2 );
+		transition: filter .5s ease;
+
+		.session-time {
+			border: 1px dotted transparent;
+		}
+
+		&:hover {
+			filter: none;
+			background-color: var( --wp--preset--color--custom-dark );
+			border: 1px dotted var( --wp--preset--color--contrast-3 );
+			box-shadow: 0 0 2px var( --wp--preset--color--custom-dark );
+
+			.session-time {
+				border-color: var( --wp--preset--color--contrast-3 );
+				background-color: var( --wp--preset--color--base-2 ) !important;
+			}
+		}
+
+		&:nth-last-child( 1 ) {
+			border-bottom: 1px solid var( --wp--preset--color--custom-dark );
+			&:hover {
+				border-bottom: 1px dotted var( --wp--preset--color--contrast-3 );
+			}
+		}
+	}
+
+	&:hover .wcb_session:not( :hover ) {
+		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
+	}
+}
+
+/**
+ * Speakers section
+ */
+ .wcb_speaker {
+	 perspective: 1000px;
+
+ 	.flip-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 400px;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+	}
+
+	&:hover .flip-wrapper {
+		transform: rotateY( 180deg );
+	}
+
+	.flip-front, .flip-back {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		-webkit-backface-visibility: hidden; /* Safari */
+		backface-visibility: hidden;
+	}
+
+	.flip-back {
+		transform: rotateY( 180deg );
+	}
+}
+
+/*
+ * Speaker section
+ * Fade effect
+ */
+ .speaker-wrapper {
+	.speaker-front {
+		position: relative;
+		z-index: 1;
+		transition: opacity 0.5s;
+	}
+
+	.speaker-excerpt {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		opacity: 0;
+		transition: opacity 0.5s ease-in;
+	}
+
+	&:hover {
+		.speaker-front {
+			opacity: 0;
+		}
+
+		.speaker-excerpt {
+			opacity: 1;
+		}
+	}
+ }
+
+ /**
+  * Blog post page
+  */
+ .blog-post-image img {
+	filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
+
+	animation: rotate-hue-color 40s infinite;
+
+	&:hover {
+		filter: none;
+	}
+ }
+
+ @keyframes rotate-hue-color {
+	0% {
+		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
+	}
+
+	100% {
+		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 405deg );
+	}
+ }
+
+/**
+ * Tickets
+ */
+#tix {
+	margin: 0 auto;
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tix-clear {
+		display: none; // :facepalm:
+	}
+
+	/**
+	 * Tickets - List (First step)
+	 */
+	.tix_tickets_table.tix-tickets-list {
+		display: flex;
+		flex-direction: row;
+		font-size: 30px;
+		@include grid-3x3;
+
+		thead {
+			color: var( --wp--preset--color--contrast-2 );
+		}
+
+		tbody {
+			flex-grow: 2;
+		}
+
+		tr {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			th, td {
+				text-align: left;
+				padding: 0 24px;
+				box-sizing: border-box;
+				height: 80px;
+				line-height: 80px;
+				border-bottom: 1px dotted var( --wp--preset--color--contrast );
+			}
+		}
+	}
+
+	.tix-order-summary td {
+		text-align: right;
+	}
+
+	.tix-attendee-form {
+		tr td {
+			padding: 2px 12px 40px;
+		}
+
+		.tix-row-first-name td,
+		.tix-row-last-name td {
+			padding-bottom: 2px;
+		}
+
+		.tix-row-email td {
+			padding-bottom: 40px;
+		}
+
+		.tix-left {
+			text-align: right;
+			min-width: 50%;
+		}
+
+		.tix-right {
+			.tix-screen-reader-fieldset {
+				display: flex;
+				justify-content: flex-start;
+				flex-direction: row;
+				align-items: center;
+				gap: 8px;
+
+				label {
+					display: flex;
+					gap: 8px;
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	/*
+	 * Form elements
+	 */
+
+	select,
+	button,
+	input {
+		box-sizing: border-box;
+		padding: 8px;
+		color: var( --wp--preset--color--contrast );
+		background-color: var( --wp--preset--color--custom-dark );
+		border: 1px solid var( --wp--preset--color--custom-dark );
+		font-family: var( --wp--preset--font-family--chivo-mono );
+		font-size: var(--wp--preset--font-size--medium) !important;
+	}
+
+	button, input[ type="submit" ] {
+		align-items: center;
+		display: inline-flex;
+		justify-content: center;
+		gap: .5em;
+		padding-top: 0.8rem;
+		padding-right: 1.6rem;
+		padding-bottom: 0.98rem;
+		padding-left: 1.6rem;
+		text-decoration: none;
+		border-radius: 14px;
+	}
+}
+
+@media ( max-width: 600px ) {
+	#tix {
+		min-width: auto;
+		/**
+		* Tickets - List (First step)
+		*/
+		.tix_tickets_table.tix-tickets-list {
+			thead {
+				font-size: 16px;
+			}
+
+			tbody {
+				font-size: 22px;
+			}
+
+			tr {
+				th, td {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+			}
+		}
+	}
+}
+
+@media ( max-width: 800px ) {
+	.tix_tickets_table.tix-order-summary {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.tix_tickets_table.tix-order-summary th,
+	.tix_tickets_table.tix-order-summary td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	// .tix_tickets_table.tix-order-summary thead {
+	// 	display: none;
+	// }
+
+	.tix_tickets_table.tix-order-summary tr {
+		margin-bottom: 10px;
+	}
+
+	.tix_tickets_table.tix-order-summary td::before {
+		content: attr(data-label);
+		font-weight: bold;
+		display: inline-block;
+		width: 50%;
+		box-sizing: border-box;
+	}
+	
+	.tix_tickets_table.tix-attendee-form {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.tix_tickets_table.tix-attendee-form th,
+	.tix_tickets_table.tix-attendee-form td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	.tix_tickets_table.tix-attendee-form th {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	.tix_tickets_table.tix-attendee-form tr {
+		margin-bottom: 10px;
+	}
+}
+
+.tix-submit {
+	text-align: center;
+}
+
+.tix-checkout-button {
+	display: inline-block;
+	margin-top: 20px;
+}
+
+ /**
+  * Footer
+  */
+footer.wp-block-template-part {
+	margin-top: 0;
 }

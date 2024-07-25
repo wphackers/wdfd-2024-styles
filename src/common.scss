@@ -1,0 +1,47 @@
+
+/**
+ * Background grid - reusable effect
+ * Grid: 3x3
+ * Image defined by using background image, with lines
+ */
+ @mixin grid-3x3 {
+	background-color: var(--wp--preset--color--base);
+	background-image:
+		linear-gradient( to right, var(--wp--preset--color--custom-dark ) 1px, transparent 1px ),
+		linear-gradient( to bottom, var(--wp--preset--color--custom-dark ) 1px, transparent 1px );
+	background-size: 3px 3px;
+	border: 3px solid var( --wp--preset--color--base-2 );
+	border-radius: 4px;
+}
+
+/**
+ * Convert a table with many columns into a table with two columns
+ */
+@mixin table-to-two-columns {
+	display: flex;
+	flex-direction: row;
+	font-size: 30px;
+
+	thead {
+		color: var( --wp--preset--color--contrast-2 );
+	}
+
+	tbody {
+		flex-grow: 2;
+	}
+
+	tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		th, td {
+			text-align: left;
+			padding: 0 24px;
+			box-sizing: border-box;
+			height: 80px;
+			line-height: 80px;
+			border-bottom: 1px dotted var( --wp--preset--color--contrast );
+		}
+	}
+}

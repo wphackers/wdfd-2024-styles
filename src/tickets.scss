@@ -1,0 +1,173 @@
+@import './common.scss';
+
+/**
+ * Tickets
+ */
+ body.admin-bar #tix {
+	padding: 0;
+}
+
+#tix {
+	min-width: 800px;
+	margin: 0 auto;
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tix-clear {
+		display: none; // :facepalm:
+	}
+
+	/**
+	 * Tickets - List (First step)
+	 */
+	.tix_tickets_table.tix-tickets-list {
+		@include table-to-two-columns();
+		@include grid-3x3();
+	}
+
+	/**
+	 * Tickets - Order Summary (Second step)
+	 */
+	.tix-order-summary{
+		@include grid-3x3();
+		margin-bottom: 16px;
+
+		thead {
+			border-bottom: 1px solid var( --wp--preset--color--contrast );
+			background-color: var( --wp--preset--color--custom-dark );
+		}
+
+		th, td {
+			padding: 8px;
+			white-space: nowrap;
+		}
+	}
+
+	/**
+	 * Tickets - Attendee Form (Third two)
+	 */
+	.tix-attendee-form {
+		@include grid-3x3();
+		margin-bottom: 32px;
+		font-size: 0.8em;
+
+		th {
+			background-color: var( --wp--preset--color--custom-dark );
+		}
+
+		th, td {
+			padding: 8px;
+			vertical-align: middle;
+		}
+
+		.tix-left {
+			min-width: 200px;
+		}
+
+		.tix-row-first-name,
+		.tix-row-last-name,
+		.tix-row-email {
+			font-size: 1.2em;
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+	/*
+	 * Form elements
+	 */
+	select,
+	button,
+	input {
+		box-sizing: border-box;
+		padding: 8px;
+		color: var( --wp--preset--color--contrast );
+		background-color: var( --wp--preset--color--custom-dark );
+		border: 1px solid var( --wp--preset--color--custom-dark );
+		font-family: var( --wp--preset--font-family--chivo-mono );
+		font-size: var(--wp--preset--font-size--medium) !important;
+	}
+
+	button, input[ type="submit" ] {
+		align-items: center;
+		display: inline-flex;
+		justify-content: center;
+		gap: .5em;
+		padding-top: 0.8rem;
+		padding-right: 1.6rem;
+		padding-bottom: 0.98rem;
+		padding-left: 1.6rem;
+		text-decoration: none;
+		border-radius: 14px;
+	}
+}
+
+@media ( max-width: 800px ) {
+	#tix {
+		min-width: auto;
+	}
+}
+
+@media ( max-width: 600px ) {
+	#tix {
+		min-width: auto;
+		/**
+		 * Tickets - List (First step)
+		 */
+		.tix_tickets_table.tix-tickets-list {
+			thead {
+				font-size: 16px;
+			}
+
+			tbody {
+				font-size: 22px;
+			}
+
+			tr {
+				th, td {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+			}
+		}
+		
+		/*
+		* Tickets - Order Summary (Second step)
+		*/
+		.tix-order-summary {
+			font-size: 16px;
+			
+			th, td {
+				white-space: normal;
+				padding: 4px 2px;
+			}
+		}
+
+		/**
+		 * Tickets - Attendee Form (Step two)
+		 */
+		.tix-attendee-form {
+			margin-bottom: 16px;
+			th, td {
+				padding: 4px;
+			}
+
+			.tix-left {
+				min-width: 180px;
+			}
+		}
+	}
+
+
+	/**
+	 * Tickets - Attendee Form (Step two)
+	 */
+	.page-slug-tickets .entry-content {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}

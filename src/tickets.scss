@@ -19,64 +19,6 @@
 	.tix-clear {
 		display: none; // :facepalm:
 	}
-
-	/**
-	 * Tickets - List (First step)
-	 */
-	.tix_tickets_table.tix-tickets-list {
-		@include table-to-two-columns();
-		@include grid-3x3();
-	}
-
-	/**
-	 * Tickets - Order Summary (Second step)
-	 */
-	.tix-order-summary{
-		@include grid-3x3();
-		margin-bottom: 16px;
-
-		thead {
-			border-bottom: 1px solid var( --wp--preset--color--contrast );
-			background-color: var( --wp--preset--color--custom-dark );
-		}
-
-		th, td {
-			padding: 8px;
-			white-space: nowrap;
-		}
-	}
-
-	/**
-	 * Tickets - Attendee Form (Third two)
-	 */
-	.tix-attendee-form {
-		@include grid-3x3();
-		margin-bottom: 32px;
-		font-size: 0.8em;
-
-		th {
-			background-color: var( --wp--preset--color--custom-dark );
-		}
-
-		th, td {
-			padding: 8px;
-			vertical-align: middle;
-		}
-
-		.tix-left {
-			min-width: 200px;
-		}
-
-		.tix-row-first-name,
-		.tix-row-last-name,
-		.tix-row-email {
-			font-size: 1.2em;
-			input {
-				width: 100%;
-			}
-		}
-	}
-
 	/*
 	 * Form elements
 	 */
@@ -104,11 +46,130 @@
 		text-decoration: none;
 		border-radius: 14px;
 	}
+
+	/**
+	 * Tickets - List (First step)
+	 */
+	 .tix_tickets_table.tix-tickets-list {
+		@include table-to-two-columns();
+		@include grid-3x3();
+	}
+
+	/**
+	 * Tickets - Order Summary (Second step)
+	 */
+	.tix-order-summary{
+		@include grid-3x3();
+		margin-bottom: 16px;
+
+		thead {
+			border-bottom: 1px solid var( --wp--preset--color--contrast );
+			background-color: var( --wp--preset--color--custom-dark );
+		}
+
+		th, td {
+			padding: 8px;
+			white-space: nowrap;
+		}
+
+		td {
+			text-align: right;
+
+			&.tix-column-description {
+				text-align: left;
+			}
+		}
+
+		.tix-row-total {
+			font-size: 1.2em;
+		}
+	}
+
+	/**
+	 * Tickets - Attendee Form (Third two)
+	 */
+	.tix-attendee-form {
+		@include grid-3x3();
+		margin-bottom: 32px;
+
+		th {
+			background-color: var( --wp--preset--color--custom-dark );
+		}
+
+		th, td {
+			padding: 8px 16px;
+		}
+
+		.tix-left {
+			min-width: 200px;
+			font-size: 0.9em;
+		}
+
+		.tix-row-first-name,
+		.tix-row-last-name,
+		.tix-row-email {
+			font-size: 1.1em;
+			padding: 16px;
+			input {
+				width: 100%;
+			}
+		}
+
+		label {
+			display: inline-block;
+			width: 100%;
+		}	
+	}
+
+
+	/**
+	 * Submit section
+	 */
+	.tix-submit {
+		.tix-payment-method-container {
+			color: var( --wp--preset--color--contrast );
+
+			label {
+				color: var( --wp--preset--color--contrast );
+			}
+
+			fieldset {
+				@include grid-3x3();
+				border-radius: 16px;
+				.tix-alternate-payment-option {
+					margin: 4px 0;
+				}
+			}
+		}
+
+		.tix-payment-method {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			gap: 32px;
+		}
+
+		button[ type="button" ] {
+			font-size: 0.8em !important;
+
+			&.tix-tab-selected,
+			&:focus,
+			&:active {
+				background-color: var( --wp--preset--color--custom-dark );
+				border: 1px solid var( --wp--preset--color--custom-link );
+				outline: none;
+			}
+		}
+	}
 }
 
 @media ( max-width: 800px ) {
 	#tix {
 		min-width: auto;
+
+		.tix-payment-method {
+			justify-content: space-between;
+		}
 	}
 }
 
@@ -161,7 +222,6 @@
 			}
 		}
 	}
-
 
 	/**
 	 * Tickets - Attendee Form (Step two)

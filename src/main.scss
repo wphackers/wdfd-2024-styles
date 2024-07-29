@@ -173,7 +173,7 @@
 	background-color: var( --wp--preset--color--white );
 	position: relative;
 	border-radius: 8px;
-	filter: invert(0.8) grayscale(0.7);
+	filter: invert( 0.8 ) grayscale( 0.7 );
 	transition: filter .5s ease;
 }
 

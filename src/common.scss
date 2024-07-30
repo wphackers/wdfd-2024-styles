@@ -5,7 +5,7 @@
  * Image defined by using background image, with lines
  */
  @mixin grid-3x3 {
-	background-color: var(--wp--preset--color--base);
+	background-color: var( --wp--preset--color--base );
 	background-image:
 		linear-gradient( to right, var(--wp--preset--color--custom-dark ) 1px, transparent 1px ),
 		linear-gradient( to bottom, var(--wp--preset--color--custom-dark ) 1px, transparent 1px );
@@ -41,7 +41,7 @@
 			box-sizing: border-box;
 			height: 80px;
 			line-height: 80px;
-			border-bottom: 1px dotted var( --wp--preset--color--contrast );
+			border-bottom: 1px dotted var( --wp--preset--color--contrast-3 );
 		}
 	}
 }

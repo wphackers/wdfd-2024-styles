@@ -1,0 +1,31 @@
+/*
+ * Form elements
+ */
+@mixin form-elements {
+	select,
+	button,
+	input {
+		box-sizing: border-box;
+		padding: 8px;
+		color: var( --wp--preset--color--contrast );
+		background-color: var( --wp--preset--color--custom-dark );
+		border: 1px solid var( --wp--preset--color--custom-dark );
+		font-family: var( --wp--preset--font-family--chivo-mono );
+		font-size: var(--wp--preset--font-size--medium) !important;
+	}
+
+	button,
+	.tix-submit input[ type="submit" ].tix-checkout-button,
+	input[ type="submit" ] {
+		align-items: center;
+		display: inline-flex;
+		justify-content: center;
+		gap: .5em;
+		padding-top: 0.8rem;
+		padding-right: 1.6rem;
+		padding-bottom: 0.98rem;
+		padding-left: 1.6rem;
+		text-decoration: none;
+		border-radius: 14px;
+	}
+}

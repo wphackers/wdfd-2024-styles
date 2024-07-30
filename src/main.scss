@@ -582,9 +582,9 @@ input[type="submit"]:hover {
  }
 
 
- /**
-  * Footer
-  */
+/**
+ * Footer
+ */
 footer.wp-block-template-part {
 	margin-top: 0;
 
@@ -606,5 +606,10 @@ footer.wp-block-template-part {
 		&:hover {
 			color: var( --wp--preset--color--custom-link-hover );
 		}
+	}
+
+	// Subscribe form
+	.wp-block-jetpack-subscriptions__form-elements {
+		max-width: 300px;
 	}
 }

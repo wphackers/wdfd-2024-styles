@@ -1,6 +1,7 @@
 @import './common.scss';
 @import './tickets.scss';
 
+
 /**
  * Background grid - reusable effect
  * Image defined by using background image, with lines
@@ -585,4 +586,24 @@ input[type="submit"]:hover {
   */
 footer.wp-block-template-part {
 	margin-top: 0;
+
+	.wp-block-site-tagline {
+		font-style: italic;
+		opacity: 0.5;
+		filter: blur( 1px );
+		transition: opacity 0.5s ease, filter 0.5s ease;
+	}
+
+	&:hover {
+		.wp-block-site-tagline {
+			opacity: 1;
+			filter: none;
+		}
+	}
+
+	.wp-block-navigation-item__content {
+		&:hover {
+			color: var( --wp--preset--color--custom-link-hover );
+		}
+	}
 }

@@ -579,9 +579,31 @@ input[type="submit"]:hover {
 	}
 }
 
- /**
-  * Blog post page
-  */
+/*
+ * Location / Venue section
+ */
+.venue-location-section {
+	a.wp-block-wporg-link-wrapper {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:hover .wp-block-cover__image-background {
+			filter: none;
+		}
+	}
+
+	.wp-block-cover__image-background {
+		filter: blur( 2px ) hue-rotate( 100deg ) grayscale( 0.5 );
+		transition: filter 0.5s ease;
+	}
+}
+
+/**
+ * Blog post page
+ */
  .blog-post-image img {
 	filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
 

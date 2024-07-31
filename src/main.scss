@@ -138,60 +138,31 @@
 }
 
 /*
- * Sponsors
+ * Sponsors section
  */
 .sponsors {
 	border-top: 2px dashed #444;
 	border-bottom: 2px dashed #444;
 	box-shadow: 0 1px 5px black inset;
-}
 
-.sponsors .wp-block-post.wcb_sponsor {
-	background-color: var( --wp--preset--color--white );
-	position: relative;
-	border-radius: 8px;
-	filter: invert( 0.8 ) grayscale( 0.7 );
-	transition: filter .5s ease;
-}
+	.wp-block-post {
 
-/*
- * scanlines for sponsor box
- */
-.sponsors .wp-block-post.wcb_sponsor::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.6) 50%);
-	background-size: 100% 4px;
-	animation: scanlines .8s infinite;
-	pointer-events: none;
-	z-index: 100;
-	transition: opacity .5 ease;
-	opacity: 1;
-}
+		&.wcb_sponsor {
+			background-color: var( --wp--preset--color--white );
+			position: relative;
+			border-radius: 8px;
+			@include scanlines( 3px );
+			transition: filter .5s ease;
+			filter: invert( 0.8 ) grayscale( 0.7 );
 
-.sponsors .wp-block-post.wcb_sponsor:hover {
-	filter: none;
-}
+			&:hover {
+				filter: none;
 
-.sponsors .wp-block-post.wcb_sponsor:hover:before {
-	opacity: 0;
-}
-
-@keyframes gradientBorder {
-	0% {
-		background-position: 0 50%;
-	}
-	
-	50% {
-		background-position: 100% 50%;
-	}
-	
-	100% {
-		background-position: 0 50%;
+				&:before {
+					opacity: 0;
+				}
+			}
+		}
 	}
 }
 

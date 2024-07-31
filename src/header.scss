@@ -1,29 +1,23 @@
+@import './common.scss';
+
 /**
  *  Header
  */
  .cover-header-template {
-	padding: 0 !important;
-
 	.wp-block-cover {
 		overflow: visible;
+		@include scanlines( 4px );
 	}
 
+	// Tweak the main navigation menu
 	.wp-block-navigation-item {
 		padding-top: 1px;
 		padding-bottom: 1px;
 	}
 
-	.wp-block-navigation-item__content.wp-block-navigation-item__content:hover,
+	.wp-block-navigation-item__content:hover,
 	a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {
-		color: var(--wp--preset--color--custom-link);
-	}
-
-	ul.wp-block-navigation__submenu-container .wp-block-navigation-item {
-		margin: 2px 0;
-	}
-
-	.main-menu {
-		margin: 0;
+		color: var( --wp--preset--color--custom-link );
 	}
 }
 

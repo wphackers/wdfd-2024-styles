@@ -1,0 +1,20 @@
+@import './common.scss';
+
+.organizers-list {
+	.wcb_organizer {
+		&:hover {
+			.old-style {
+				filter: none;
+			}
+		}
+	}
+
+	.old-style {
+		@include old-style();
+		transition: filter 0.5s;
+	}
+	
+	.wp-block-wordcamp-avatar img {		
+		border: 1px solid var( --wp--preset--color--custom-dark );
+	}
+}

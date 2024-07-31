@@ -151,7 +151,7 @@
 			background-color: var( --wp--preset--color--white );
 			position: relative;
 			border-radius: 8px;
-			@include scanlines( 3px );
+			@include scanlines( 4px, rgba( 255, 255, 255, 0.6 ), 0.8s, infinite );
 			transition: filter .5s ease;
 			filter: invert( 0.8 ) grayscale( 0.7 );
 

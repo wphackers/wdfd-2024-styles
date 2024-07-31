@@ -226,16 +226,6 @@
 	}
 }
 
-@keyframes scanlines {
-	0% {
-		background-position: 0 0;
-	}
-	
-	100% {
-		background-position: 0 100%;
-	}
-}
-
 /**
  * Subscribe form
  */
@@ -278,7 +268,7 @@ input[type="submit"]:hover {
  * Part of query loop
  */
 .wp-block-post .wp-block-post-featured-image {
-	filter: grayscale(0.7);
+	filter: grayscale( 0.7 );
 	transition: filter 1s ease;
 }
 

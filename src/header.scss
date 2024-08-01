@@ -19,31 +19,66 @@
 	a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {
 		color: var( --wp--preset--color--custom-link );
 	}
-}
 
-/**
- * Caret effect.
- * Used in the header
- */
- .caret {
-	position: relative;
+	.menu-tickets {
+		.wp-block-navigation-item__content {
+			.wp-block-navigation-item__label {
+				position: relative;
+				padding-left: 0.3em;
+				&:before {
+					color: #ffdb53;
+					text-shadow: 0 0 3px var( --wp--preset--color--custom-black );
+					font-family: dashicons;
+					content: "\f486";
+					display: inline-block;
+					line-height: 1;
+					font-weight: 400;
+					font-style: normal;
+					speak: never;
+					text-decoration: inherit;
+					text-transform: none;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					width: 20px;
+					height: 20px;
+					font-size: 20px;
+					vertical-align: top;
+					text-align: center;
+					position: absolute;
+					z-index: 100;
+					left: -1em;
+					transition: filter 2s ease, transform 400ms ease, margin 400ms ease, left 400ms ease;
+				}
+			}
 
-	&::after {
-		content: '';
-		display: inline-block;
-		width: .5em;
-		height: .7em;
-		background-color: var( --wp--preset--color--contrast );
-		margin-left: .1em;
-		animation: blink 1s step-start infinite;
-		box-shadow:
-			0 0 1px var( --wp--preset--color--white ),
-			0 0 1px var( --wp--preset--color--white ),
-			0 0 2px var( --wp--preset--color--custom-menu-link ),
-			0 0 3px var( --wp--preset--color--custom-menu-link ),
-			0 0 4px var( --wp--preset--color--custom-menu-link ),
-			0 0 5px var( --wp--preset--color--custom-menu-link ),
-			0 0 7px var( --wp--preset--color--custom-menu-link );
+			&:hover .wp-block-navigation-item__label::before {
+				filter: hue-rotate( 360deg );
+				transform: scale( 3 ) rotate( -18deg );
+				left: -1.7em;
+			}
+		}
+	}
+
+	.wd4d-title {
+		@include neonify();
+		@include caret();
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				@include neonify( var( --wp--preset--color--custom-light-green ) );
+			}
+		}
+	}
+
+	.header-description {
+		max-width: 800px;
+		margin: 0 auto;
+		border: 4px double var( --wp--preset--color--custom-dark-green );
+		border-radius: 16px;
+		background-color: rgba( 0, 255, 100, 0.05 );
 	}
 }
 

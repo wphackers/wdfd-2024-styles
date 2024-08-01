@@ -109,3 +109,45 @@
 		mix-blend-mode: darken;
 	}
 }
+
+/**
+ * Caret animation
+ */
+@mixin caret(
+	$color: var( --wp--preset--color--custom-dark-green ),
+	$background-color: var( --wp--preset--color--contrast )
+) {
+	position: relative;
+
+	// caret position correction
+	left: 0.1em;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: .5em;
+		height: .7em;
+		background-color: $background-color;
+		margin-left: .1em;
+		animation: blink 1s step-start infinite;
+		box-shadow:
+			0 0 1px var( --wp--preset--color--white ),
+			0 0 1px var( --wp--preset--color--white ),
+			0 0 2px $color,
+			0 0 3px $color,
+			0 0 4px $color,
+			0 0 5px $color,
+			0 0 7px $color;
+	}
+}
+
+@mixin neonify( $light-color: var( --wp--preset--color--custom-dark-green ) ) {
+	text-shadow:
+		0 0 1px #fff,
+		0 0 1px #fff,
+		0 0 2px $light-color,
+		0 0 3px $light-color,
+		0 0 4px $light-color,
+		0 0 5px $light-color,
+		0 0 7px $light-color;
+}

@@ -121,7 +121,6 @@
 /**
  * announcement (cover block)
  */
-
 .announcement {
 	border-style: dashed;
 	box-shadow: 0 3px 3px var( --wp--preset--color--custom-dark );
@@ -146,6 +145,12 @@
 	box-shadow: 0 1px 5px black inset;
 
 	.wp-block-post {
+
+		.wp-block-post-featured-image {
+			a {
+				padding: 8px;
+			}
+		}
 
 		&.wcb_sponsor {
 			background-color: var( --wp--preset--color--white );

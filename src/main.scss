@@ -1,7 +1,6 @@
 @import './common.scss';
 @import './tickets.scss';
 @import './header.scss';
-@import './organizers.scss';
 
 .grid-3x3 {
 	@include grid-3x3;
@@ -386,8 +385,9 @@ input[type="submit"]:hover {
 }
 
 /*
- * section/pattern: Speakers
+ * section/pattern: Speakers - Organizers
  */
+ .wcb_organizer,
  .wcb_speaker {
 	border-color: 1px dotted var( --wp--preset--color--custom-dark );
 	border-radius: 8px;
@@ -427,6 +427,12 @@ input[type="submit"]:hover {
 
 .section-speakers-wrapper {
 	&:hover .wcb_speaker:not( :hover ) {
+		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
+	}
+}
+
+.section-organizers-wrapper {
+	&:hover .wcb_organizer:not( :hover ) {
 		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
 	}
 }

@@ -3,17 +3,10 @@
 @import './header.scss';
 @import './organizers.scss';
 
-/**
- * Background grid - reusable effect
- * Image defined by using background image, with lines
- */
 .grid-3x3 {
 	@include grid-3x3;
 }
 
-/**
- * Highlights
- */
 .highlight-icon {
 	filter: contrast( 10 ) brightness( 10 ) grayscale( 1 );
 }
@@ -89,33 +82,6 @@
 
 .wp-site-blocks .contact-form-submission .go-back-message .link {
 	color: var( --wp--preset--color--custom-link ) !important;
-}
-
-/**
- * Neon effect
- */
-.neonify {
-	text-shadow:
-		0 0 1px #fff,
-		0 0 1px #fff,
-		0 0 2px var( --wp--preset--color--custom-menu-link ),
-		0 0 3px var( --wp--preset--color--custom-menu-link ),
-		0 0 4px var( --wp--preset--color--custom-menu-link ),
-		0 0 5px var( --wp--preset--color--custom-menu-link ),
-		0 0 7px var( --wp--preset--color--custom-menu-link );
-}
-
-.neon-text {
-	color: #fff;
-	text-shadow:
-		0 0 2px #fff,
-		0 0 2px #fff,
-		0 0 2px #fff,
-		0 0 2px var( --wp--preset--color--custom-dark ),
-		0 0 2px var( --wp--preset--color--custom-dark ),
-		0 0 2px var( --wp--preset--color--custom-dark ),
-		0 0 2px var( --wp--preset--color--custom-dark ),
-		0 0 2px var( --wp--preset--color--custom-dark );
 }
 
 /**

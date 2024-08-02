@@ -173,3 +173,7 @@
 	vertical-align: top;
 	text-align: center;
 }
+
+@mixin noise-photo () {
+	filter: grayscale( 1 ) sepia( 0.3 ) contrast( 2 ) hue-rotate( 45deg );
+}

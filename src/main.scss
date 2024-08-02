@@ -312,18 +312,6 @@ input[type="submit"]:hover {
 	margin: 0;
 }
 
-.speaker-avatar-hover {
-	position: absolute;
-	top: 0;
-	filter: sepia( 1 ) hue-rotate( 45deg );
-	margin: 0;
-	transition: filter ease-in 500ms;
-}
-
-.type-wcb_speaker:hover .speaker-avatar-hover {
-	filter: none;
-}
-
 /**
  * Schedule page
  */
@@ -345,6 +333,9 @@ input[type="submit"]:hover {
 	}
 }
 
+/**
+ * seccion/pattern: Sessions
+ */
 .schedule-sessions {
 	.wcb_session {
 		margin: 0;
@@ -359,6 +350,11 @@ input[type="submit"]:hover {
 			border: 1px dotted transparent;
 		}
 
+		.avatar {
+			@include noise-photo();
+			transition: filter .5s ease, border-color .5s ease;
+		}
+
 		&:hover {
 			filter: none;
 			background-color: var( --wp--preset--color--custom-dark );
@@ -368,6 +364,11 @@ input[type="submit"]:hover {
 			.session-time {
 				border-color: var( --wp--preset--color--contrast-3 );
 				background-color: var( --wp--preset--color--base-2 ) !important;
+			}
+
+			.avatar {
+				filter: none;
+				border-color: var( --wp--preset--color--contrast ) !important;
 			}
 		}
 
@@ -384,71 +385,58 @@ input[type="submit"]:hover {
 	}
 }
 
-/**
- * Speakers section
+/*
+ * section/pattern: Speakers
  */
  .wcb_speaker {
-	 perspective: 1000px;
+	border-color: 1px dotted var( --wp--preset--color--custom-dark );
+	border-radius: 8px;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: var( --wp--preset--spacing--20 );
+	padding-right: var( --wp--preset--spacing--10 );
+	padding-bottom: var( --wp--preset--spacing--30 );
+	padding-left: var( --wp--preset--spacing--10 );
+	background-color: var( --wp--preset--color--base-2 ) !important;
+	filter: grayscale( 1 );
+	transition: filter 0.5s ease;
 
- 	.flip-wrapper {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		min-height: 400px;
-		transition: transform 0.8s;
-		transform-style: preserve-3d;
-	}
+	.wp-block-wordcamp-avatar {
+		// Handle speaker avatar resizing
+		width: auto !important;
+		height: 100% !important;
 
-	&:hover .flip-wrapper {
-		transform: rotateY( 180deg );
-	}
-
-	.flip-front, .flip-back {
-		position: absolute;
-		top: 0px;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden; /* Safari */
-		backface-visibility: hidden;
-	}
-
-	.flip-back {
-		transform: rotateY( 180deg );
-	}
-}
-
-/*
- * Speaker section
- * Fade effect
- */
- .speaker-wrapper {
-	.speaker-front {
-		position: relative;
-		z-index: 1;
-		transition: opacity 0.5s;
-	}
-
-	.speaker-excerpt {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		opacity: 0;
-		transition: opacity 0.5s ease-in;
+		img {
+			@include noise-photo();
+			transition: filter 0.5s ease;
+			border-radius: 8px;
+			display: block;
+			height: 100%;
+			margin: 0 auto;
+		}
 	}
 
 	&:hover {
-		.speaker-front {
-			opacity: 0;
-		}
+		filter: none;
 
-		.speaker-excerpt {
-			opacity: 1;
+		.wp-block-wordcamp-avatar img {
+			filter: none;
 		}
 	}
- }
+}
+
+.section-speakers-wrapper {
+	&:hover .wcb_speaker:not( :hover ) {
+		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
+	}
+}
+
+// switch to grid layout on small screens
+@media ( max-width: 800px ) {
+    .wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /**
  * Get involved template

@@ -7,6 +7,11 @@
 	.wp-block-cover {
 		overflow: visible;
 		@include scanlines( 4px );
+		background-color: var( --wp--preset--color--custom-black );
+	}
+
+	.wp-block-cover__video-background {
+		filter: sepia(1) hue-rotate(75deg) blur(2px) grayscale(0) opacity(0.3);
 	}
 
 	// Tweak the main navigation menu

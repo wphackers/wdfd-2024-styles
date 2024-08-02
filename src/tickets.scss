@@ -149,28 +149,33 @@
 		}
 
 		input[ type="submit" ].tix-checkout-button {
-			color: var( --wp--preset--color--custom-relevant );
+			color: var( --wp--preset--color--custom-checkout );
 			text-transform: uppercase;
 			white-space: nowrap;
 			padding: 16px 32px;
-			border: 1px solid var( --wp--preset--color--custom-dark );
+			border: 2px solid var( --wp--preset--color--custom-dark );
 
 
 			&:hover {
-				border: 1px solid var( --wp--preset--color--custom-relevant-hover );
-				color: var( --wp--preset--color--custom-relevant-hover );
+				border-color: 1px solid var( --wp--preset--color--custom-checkout );
 				box-shadow: none;
 			}
 		}
 	}
+}
 
-	.tix-info {
-		padding: 16px 32px;
-		background-color: var( --wp--preset--color--base-2 );
-		border: 1px solid var( --wp--preset--color--custom-dark );
-		color: var( --wp--preset--color--custom-info );
-		border-left-width: 10px;
-	}
+.tix-error,
+.tix-info {
+	padding: 16px 32px;
+	background-color: var( --wp--preset--color--base-2 );
+	color: var( --wp--preset--color--custom-info-text );
+	margin-bottom: 8px;
+}
+
+.tix-error {
+	color: var( --wp--preset--color--custom-error-text );
+	background-color: var( --wp--preset--color--custom-error-background );
+	border-color: var( --wp--preset--color--custom-error-text );
 }
 
 @media ( max-width: 800px ) {

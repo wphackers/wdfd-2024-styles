@@ -460,18 +460,22 @@ input[type="submit"]:hover {
  * Get involved template
  */
 .get-involved {
-	.star {
-		transition: transform 300ms ease, color 300ms ease;
-		margin: 0 auto;
-		height: 1.2em;
-		line-height: 1em;
-		text-shadow: 0 0 8px var( --wp--preset--color--custom-dark );
-	}
-
 	.wp-block-column {
 		a.wp-block-wporg-link-wrapper {
 			@include grid-3x3;
-			border-style: dotted;
+			transition: filter 0.5s ease;
+			filter: grayscale( 0.8 );
+			border-color: var( --wp--preset--color--custom-relevant ) !important;
+			color: var( --wp--preset--color--custom-relevant ) !important;
+
+			&:before {
+				transition: transform 200ms ease;
+				@include dashicon( "\f486", inherit, 1.2em );
+				text-shadow: 0 0 8px var( --wp--preset--color--custom-dark );
+				font-size: 6em;
+				display: block;
+				margin: 0.2em auto 0.3em;
+			}
 
 			.wp-block-heading {
 				padding: 0;
@@ -479,49 +483,37 @@ input[type="submit"]:hover {
 			}
 
 			&:hover {
+				filter: none;
+				&:before {
+					transform: scale( 1.2 );
+				}
+
 				text-decoration: none !important;
-				box-shadow: 0 0 1px 1px var( --wp--preset--color--custom-relevant ) inset;
 
 				.wp-block-heading {
 					text-decoration: underline;
-					color: var( --wp--preset--color--custom-relevant );
-				}
-
-				.star {
-					transform: scale( 1.3 ) rotate( 72deg );
-					color: var( --wp--preset--color--custom-relevant );
 				}
 			}
 		}
 
 		&:nth-child( 2 ) {
 			a.wp-block-wporg-link-wrapper {
-				&:hover {
-					box-shadow: 0 0 1px 1px var( --wp--preset--color--custom-relevant-2 ) inset;
+				color: var( --wp--preset--color--custom-relevant-2 ) !important;
+				border-color: var( --wp--preset--color--custom-relevant-2 ) !important;
 
-					.wp-block-heading {
-						color: var( --wp--preset--color--custom-relevant-2 );
-					}
-
-					.star {
-						color: var( --wp--preset--color--custom-relevant-2 );
-					}
+				&:before {
+					content: "\f488";
 				}
 			}
 		}
 
 		&:nth-child( 3 ) {
 			a.wp-block-wporg-link-wrapper {
-				&:hover {
-					box-shadow: 0 0 1px 1px var( --wp--preset--color--custom-relevant-3 ) inset;
+				color: var( --wp--preset--color--custom-relevant-3 ) !important;
+				border-color: var( --wp--preset--color--custom-relevant-3 ) !important;
 
-					.wp-block-heading {
-						color: var( --wp--preset--color--custom-relevant-3 );
-					}
-
-					.star {
-						color: var( --wp--preset--color--custom-relevant-3 );
-					}
+				&:before {
+					content: "\f313";
 				}
 			}
 		}

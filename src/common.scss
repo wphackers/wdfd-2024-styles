@@ -119,9 +119,6 @@
 ) {
 	position: relative;
 
-	// caret position correction
-	left: 0.1em;
-
 	&::after {
 		content: '';
 		display: inline-block;
@@ -150,4 +147,29 @@
 		0 0 4px $light-color,
 		0 0 5px $light-color,
 		0 0 7px $light-color;
+}
+
+@mixin dashicon(
+	$icon: "\f486",
+	$color: var( --wp--preset--color--custom-black ),
+	$size: 20px
+) {
+	color: $color;
+	font-family: dashicons;
+	content: $icon;
+	display: inline-block;
+	font-weight: 400;
+	font-style: normal;
+	speak: never;
+	text-decoration: inherit;
+	text-transform: none;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: $size;
+	height: $size;
+	line-height: $size;
+	font-size: $size;
+	vertical-align: top;
+	text-align: center;
 }

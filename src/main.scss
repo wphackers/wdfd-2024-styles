@@ -85,7 +85,7 @@
 }
 
 /**
- * announcement (cover block)
+ * section/patter: Announcement
  */
 .announcement {
 	border-style: dashed;
@@ -103,7 +103,7 @@
 }
 
 /*
- * Sponsors section
+ * section/pattern: Sponsors
  */
 .sponsors {
 	border-top: 2px dashed #444;
@@ -137,8 +137,33 @@
 	}
 }
 
-.sponsors .wp-block-post.wcb_sponsor.post-26:hover {
-	border-color: #196BDE;
+/**
+ * section/pattern: News
+ */
+.news-image img {
+	filter: blur( 2px ) grayscale( 0.8 );
+}
+
+
+/**
+ * page: News
+ */
+.page-slug-news {
+	.wp-block-post {
+		filter: grayscale( 0.8 );
+
+		.wp-block-post-featured-image {
+			filter: blur( 2px );
+			transition: filter 500ms ease 300ms;
+		}
+
+		&:hover {
+			filter: none;
+			.wp-block-post-featured-image {
+				filter: none;
+			}
+		}
+	}
 }
 
 /*
@@ -237,27 +262,6 @@ input[type="submit"]:hover {
 .social-logo.social-logo-facebook {
 	width: 32px;
 	height: 32px;
-}
-
-/**
- * Block post instance
- * Part of query loop
- */
-.wp-block-post .wp-block-post-featured-image {
-	filter: grayscale( 0.7 );
-	transition: filter 1s ease;
-}
-
-.wp-block-post:hover .wp-block-post-featured-image {
-	filter: none;
-}
-
-.news-title a {
-	font-family: var(--wp--preset--font-family--chivo-mono) !important;
-}
-
-.news-image img {
-	filter: blur( 2px ) grayscale( 0.8 );
 }
 
 /**

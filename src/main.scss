@@ -101,33 +101,26 @@
 /*
  * section/pattern: Sponsors
  */
-.sponsors {
-	border-top: 2px dashed #444;
-	border-bottom: 2px dashed #444;
-	box-shadow: 0 1px 5px black inset;
-
-	.wp-block-post {
-
-		.wp-block-post-featured-image {
-			a {
-				padding: 8px;
-			}
+.sponsors .wp-block-post {
+	.wp-block-post-featured-image {
+		a {
+			padding: 8px;
 		}
+	}
 
-		&.wcb_sponsor {
-			background-color: var( --wp--preset--color--white );
-			position: relative;
-			border-radius: 8px;
-			@include scanlines( 4px, rgba( 255, 255, 255, 0.6 ), 0.8s, infinite );
-			transition: filter .5s ease;
-			filter: invert( 0.8 ) grayscale( 0.7 );
+	&.wcb_sponsor {
+		background-color: var( --wp--preset--color--white );
+		position: relative;
+		border-radius: 8px;
+		@include scanlines( 4px, rgba( 255, 255, 255, 0.6 ), 0.8s, infinite );
+		transition: filter .5s ease;
+		filter: invert( 0.8 ) grayscale( 0.7 );
 
-			&:hover {
-				filter: none;
+		&:hover {
+			filter: none;
 
-				&:before {
-					opacity: 0;
-				}
+			&:before {
+				opacity: 0;
 			}
 		}
 	}

@@ -323,7 +323,7 @@ input[type="submit"]:hover {
 }
 
 /**
- * seccion/pattern: Sessions
+ * section/pattern: Sessions
  */
 .schedule-sessions {
 	.wcb_session {
@@ -523,26 +523,39 @@ input[type="submit"]:hover {
 /**
  * Blog post page
  */
- .blog-post-image img {
-	filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
-
-	animation: rotate-hue-color 40s infinite;
-
-	&:hover {
-		filter: none;
-	}
- }
-
- @keyframes rotate-hue-color {
-	0% {
+.single-post {
+	.blog-post-image img {
 		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
+
+		animation: rotate-hue-color 40s infinite;
+
+		&:hover {
+			filter: none;
+		}
 	}
 
-	100% {
-		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 405deg );
-	}
- }
+	@keyframes rotate-hue-color {
+		0% {
+			filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
+		}
 
+		100% {
+			filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 405deg );
+		}
+	}
+
+	.entry-content {
+		margin-top: 0;
+	}
+
+	// Link to language version
+	.row-post-link-version {
+		position: relative;
+		top: -32px;
+		background: rgba( 0, 0, 0, 0.3 );
+		z-index: 5; // over the post content. below the header.
+	}
+}	
 
 /**
  * Footer

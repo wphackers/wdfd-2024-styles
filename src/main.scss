@@ -275,17 +275,21 @@ input[type="submit"]:hover {
 /**
  * Location - Mapbox
  */
-.wp-block-jetpack-map .mapboxgl-popup-content {
-	background-color: var(--wp--preset--color--base);
-	color: var( --wp--preset--color--white );
-}
+.wp-block-jetpack-map {
+	margin: 0;
 
-.wp-block-jetpack-map__gm-container .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-	border-top-color: var( --wp--preset--color--base );
-}
+	.mapboxgl-popup-content {
+		background-color: var(--wp--preset--color--base);
+		color: var( --wp--preset--color--white );
+	}
 
-.mapboxgl-popup-close-button {
-	color: var( --wp--preset--color--custom-link );
+	.wp-block-jetpack-map__gm-container .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+		border-top-color: var( --wp--preset--color--base );
+	}
+	
+	.mapboxgl-popup-close-button {
+		color: var( --wp--preset--color--custom-link );
+	}
 }
 
 /**
@@ -534,28 +538,27 @@ input[type="submit"]:hover {
 		}
 	}
 
-	@keyframes rotate-hue-color {
-		0% {
-			filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
-		}
-
-		100% {
-			filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 405deg );
-		}
-	}
-
 	.entry-content {
 		margin-top: 0;
+		position: relative;
 	}
 
-	// Link to language version
-	.row-post-link-version {
+	.i18n-badge {
+		top: -30px;
 		position: relative;
-		top: -32px;
-		background: rgba( 0, 0, 0, 0.3 );
-		z-index: 5; // over the post content. below the header.
+		z-index: 10;
 	}
-}	
+}
+
+@keyframes rotate-hue-color {
+	0% {
+		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
+	}
+
+	100% {
+		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 405deg );
+	}
+}
 
 /**
  * Footer
@@ -587,4 +590,56 @@ footer.wp-block-template-part {
 	.wp-block-jetpack-subscriptions__form-elements {
 		max-width: 300px;
 	}
+}
+
+.i18n-menu-item {
+	.wp-block-navigation-item__content {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 2px;
+
+		&:before {
+			filter: grayscale( 0.8 );
+			transition: filter 0.5s ease;
+			@include dashicon( "\f326", var( --wp--preset--color--custom-link ) );
+		}
+
+		&:hover {
+			&:before {
+				filter: none;
+			}
+		}
+	}
+}
+
+
+/**
+ * Style the i18n regular link
+ */
+.i18n-badge {
+	a {
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		filter: grayscale( 1 ) opacity( 0.5 );
+		transition: filter 0.5s ease;
+		text-shadow: 0 1px 1px var( --wp--preset--color--custom-dark );
+
+		&:before {
+			@include dashicon( "\f326", var( --wp--preset--color--custom-link ) );
+		}
+
+		&:after {
+			@include dashicon( "\f344", var( --wp--preset--color--custom-link ) );
+		}
+
+		&:hover {
+			filter: none;
+		}
+	}
+}
+
+.page-template .entry-content {
+	margin-top: 0;
 }

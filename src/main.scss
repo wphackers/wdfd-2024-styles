@@ -156,7 +156,7 @@
 /**
  * page: News
  */
-.page-slug-news {
+.news-posts-wrapper {
 	.wp-block-post {
 		filter: grayscale( 0.8 );
 
@@ -175,11 +175,9 @@
 }
 
 /*
- * Sponsor single page - Header
+ * Sponsor single page
  */
-.sponsor-header {
-	background: var( --wp--preset--color--white );
-}
+// .wcb_sponsor-template {}
 
 /*
  * Grid 100x100
@@ -381,8 +379,8 @@ input[type="submit"]:hover {
 /*
  * section/pattern: Speakers - Organizers
  */
- .wcb_organizer,
- .wcb_speaker {
+.wcb_organizer,
+.wcb_speaker {
 	border-color: 1px dotted var( --wp--preset--color--custom-dark );
 	border-radius: 8px;
 	margin-top: 0;
@@ -541,12 +539,12 @@ input[type="submit"]:hover {
 	.entry-content {
 		margin-top: 0;
 		position: relative;
-	}
 
-	.i18n-badge {
-		top: -30px;
-		position: relative;
-		z-index: 10;
+		.i18n-badge {
+			top: -30px;
+			position: relative;
+			z-index: 10;
+		}
 	}
 }
 
@@ -625,7 +623,6 @@ footer.wp-block-template-part {
 	}
 }
 
-
 /**
  * Style the i18n regular link
  */
@@ -635,6 +632,9 @@ footer.wp-block-template-part {
 		display: inline-flex;
 		align-items: center;
 		gap: 4px;
+		background: rgba( 0, 0, 0, 0.2 );
+		padding: 2px 8px;
+		border-radius: 8px;
 		filter: grayscale( 1 ) opacity( 0.5 );
 		transition: filter 0.5s ease;
 		text-shadow: 0 1px 1px var( --wp--preset--color--custom-dark );

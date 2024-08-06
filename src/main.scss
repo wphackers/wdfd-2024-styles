@@ -580,9 +580,22 @@ footer.wp-block-template-part {
 		}
 	}
 
-	.wp-block-navigation-item__content {
-		&:hover {
-			color: var( --wp--preset--color--custom-link-hover );
+	.wp-block-cover {
+		.wp-block-cover__image-background {
+			transition: filter 0.5s ease;
+			filter: grayscale( 0.5 ) blur( 1px );
+		}
+
+		.wp-social-link {
+			filter: grayscale( 0.8 );
+			transition: filter 0.5s ease;
+			&:hover {
+				filter: none;
+			}
+		}
+
+		&:hover .wp-block-cover__image-background {
+			filter: grayscale( 0.8 ) blur( 2px );
 		}
 	}
 

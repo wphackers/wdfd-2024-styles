@@ -81,7 +81,7 @@
 }
 
 /**
- * section/patter: Announcement
+ * section/pattern: Announcement
  */
 .announcement {
 	border-style: dashed;
@@ -377,63 +377,52 @@ input[type="submit"]:hover {
 }
 
 /*
- * section/pattern: Speakers - Organizers
+ * Query Loop Styled
  */
-.wcb_organizer,
-.wcb_speaker {
-	border-color: 1px dotted var( --wp--preset--color--custom-dark );
-	border-radius: 8px;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-top: var( --wp--preset--spacing--20 );
-	padding-right: var( --wp--preset--spacing--10 );
-	padding-bottom: var( --wp--preset--spacing--30 );
-	padding-left: var( --wp--preset--spacing--10 );
-	background-color: var( --wp--preset--color--base-2 ) !important;
-	filter: grayscale( 1 );
-	transition: filter 0.5s ease;
+.query-loop-wrapper {
+	.wp-block-post {
+		border-color: 1px dotted var( --wp--preset--color--custom-dark );
+		border-radius: 8px;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: var( --wp--preset--spacing--20 );
+		padding-right: var( --wp--preset--spacing--10 );
+		padding-bottom: var( --wp--preset--spacing--30 );
+		padding-left: var( --wp--preset--spacing--10 );
+		background-color: var( --wp--preset--color--base-2 ) !important;
+		filter: grayscale( 1 );
+		transition: filter 0.5s ease;
 
-	.wp-block-wordcamp-avatar {
-		// Handle speaker avatar resizing
-		width: auto !important;
-		height: 100% !important;
+		.wp-block-wordcamp-avatar {
+			// Handle speaker avatar resizing
+			width: auto !important;
+			height: 100% !important;
 
-		img {
-			@include noise-photo();
-			transition: filter 0.5s ease;
-			border-radius: 8px;
-			display: block;
-			height: 100%;
-			margin: 0 auto;
+			img {
+				@include noise-photo();
+				transition: filter 0.5s ease;
+				border-radius: 8px;
+				display: block;
+				height: 100%;
+				margin: 0 auto;
+			}
 		}
-	}
 
-	&:hover {
-		filter: none;
-
-		.wp-block-wordcamp-avatar img {
+		&:hover {
 			filter: none;
+
+			.wp-block-wordcamp-avatar img {
+				filter: none;
+			}
 		}
 	}
-}
 
-.section-speakers-wrapper {
-	&:hover .wcb_speaker:not( :hover ) {
+	/**
+	 * Apply styles to items not hovered
+	 */
+	&:hover .wp-block-post:not( :hover ) {
 		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
 	}
-}
-
-.section-organizers-wrapper {
-	&:hover .wcb_organizer:not( :hover ) {
-		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
-	}
-}
-
-// switch to grid layout on small screens
-@media ( max-width: 800px ) {
-    .wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /**
@@ -523,7 +512,7 @@ input[type="submit"]:hover {
 }
 
 /**
- * Blog post page
+ * Page: News
  */
 .single-post {
 	.blog-post-image img {
@@ -537,13 +526,16 @@ input[type="submit"]:hover {
 	}
 
 	.entry-content {
-		margin-top: 0;
 		position: relative;
 
 		.i18n-badge {
-			top: -30px;
-			position: relative;
+			top: -80px;
+			position: absolute;
 			z-index: 10;
+			left: 50%;
+			width: 300px;
+			margin-left: -150px !important;
+		
 		}
 	}
 }

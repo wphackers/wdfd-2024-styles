@@ -368,34 +368,35 @@ body.admin-bar #tix {
 .main-menu .wp-block-navigation-item {
   padding-top: 1px;
   padding-bottom: 1px;
-  position: relative;
-  padding-right: 16px; }
-  .main-menu .wp-block-navigation-item.has-child:after {
-    color: "inherit";
-    font-family: dashicons;
-    content: "";
-    display: inline-block;
-    font-weight: 400;
-    font-style: normal;
-    speak: never;
-    text-decoration: inherit;
-    text-transform: none;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 20px;
-    vertical-align: top;
-    text-align: center;
-    text-shadow: 0 0 3px var(--wp--preset--color--custom-black);
-    position: absolute;
-    top: 50%;
-    margin-top: -10px;
-    right: 12px; }
-  .main-menu .wp-block-navigation-item.has-child:hover:after {
-    color: var(--wp--preset--color--custom-link); }
+  position: relative; }
+  .main-menu .wp-block-navigation-item.has-child {
+    padding-right: 16px; }
+    .main-menu .wp-block-navigation-item.has-child:after {
+      color: "inherit";
+      font-family: dashicons;
+      content: "";
+      display: inline-block;
+      font-weight: 400;
+      font-style: normal;
+      speak: never;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 20px;
+      vertical-align: top;
+      text-align: center;
+      text-shadow: 0 0 3px var(--wp--preset--color--custom-black);
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      right: 12px; }
+    .main-menu .wp-block-navigation-item.has-child:hover:after {
+      color: var(--wp--preset--color--custom-link); }
   .main-menu .wp-block-navigation-item.item-apply-to-speak .wp-block-navigation-item__content:after {
     color: "inherit";
     font-family: dashicons;

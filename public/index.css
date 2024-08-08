@@ -369,7 +369,7 @@ body.admin-bar #tix {
   padding-top: 1px;
   padding-bottom: 1px;
   position: relative;
-  margin: 1px 0; }
+  margin: 1px; }
   .main-menu .wp-block-navigation-item.has-child > .wp-block-navigation-item__content {
     padding-right: 16px; }
     .main-menu .wp-block-navigation-item.has-child > .wp-block-navigation-item__content:after {

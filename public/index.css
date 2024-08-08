@@ -390,11 +390,7 @@ body.admin-bar #tix {
       font-size: 20px;
       vertical-align: top;
       text-align: center;
-      text-shadow: 0 0 3px var(--wp--preset--color--custom-black);
-      position: absolute;
-      top: 50%;
-      margin-top: -10px;
-      right: 12px; }
+      margin-left: 8px; }
     .main-menu .wp-block-navigation-item.has-child > .wp-block-navigation-item__content:hover:after {
       color: var(--wp--preset--color--custom-link); }
   .main-menu .wp-block-navigation-item.item-apply-to-speak .wp-block-navigation-item__content:after {

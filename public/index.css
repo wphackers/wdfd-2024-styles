@@ -391,8 +391,6 @@ body.admin-bar #tix {
       vertical-align: top;
       text-align: center;
       margin-left: 4px; }
-    .main-menu .wp-block-navigation-item.has-child > .wp-block-navigation-item__content:hover:after {
-      color: var(--wp--preset--color--custom-link); }
   .main-menu .wp-block-navigation-item.item-apply-to-speak .wp-block-navigation-item__content:after {
     color: "inherit";
     font-family: dashicons;
@@ -412,8 +410,6 @@ body.admin-bar #tix {
     font-size: 20px;
     vertical-align: top;
     text-align: center; }
-  .main-menu .wp-block-navigation-item.item-apply-to-speak .wp-block-navigation-item__content:hover:after {
-    color: var(--wp--preset--color--custom-link); }
 
 .main-menu .wp-block-navigation-item__content:hover,
 .main-menu a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {

@@ -420,7 +420,8 @@ body.admin-bar #tix {
 
 .main-menu .wp-block-navigation-item__content:hover,
 .main-menu a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {
-  color: var(--wp--preset--color--custom-link); }
+  color: var(--wp--preset--color--custom-link);
+  text-decoration: none; }
 
 .main-menu .menu-tickets .wp-block-navigation-item__content .wp-block-navigation-item__label {
   position: relative;

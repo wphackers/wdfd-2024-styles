@@ -145,7 +145,7 @@
 		}
 
 		&:hover {
-			filter: none;
+			filter: grayscale( 0.5 );
 			.wp-post-image {
 				filter: none;
 			}
@@ -529,7 +529,7 @@ input[type="submit"]:hover {
 		position: relative;
 
 		.i18n-badge {
-			top: -80px;
+			top: -100px;
 			position: absolute;
 			z-index: 10;
 			left: 50%;
@@ -645,6 +645,8 @@ footer.wp-block-template-part {
 	}
 }
 
+// set the box model for page templates
+.page-template-default .entry-content,
 .page-template .entry-content {
 	margin-top: 0;
 }

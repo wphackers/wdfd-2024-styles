@@ -43,6 +43,24 @@
 	.wp-block-navigation-item {
 		padding-top: 1px;
 		padding-bottom: 1px;
+		position: relative;
+		padding-right: 16px;
+
+		// Add a chevron to the item when it has a submenu
+		&.has-child {
+			&:after {
+				@include dashicon( "\f140", "inherit" );
+				text-shadow: 0 0 3px var( --wp--preset--color--custom-black );
+				position: absolute;
+				top: 50%;
+				margin-top: -10px;
+				right: 12px;
+			}
+
+			&:hover:after {
+				color: var( --wp--preset--color--custom-link );
+			}
+		}
 	}
 
 	.wp-block-navigation-item__content:hover,

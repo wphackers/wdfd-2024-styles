@@ -397,7 +397,7 @@ body.admin-bar #tix {
   .main-menu .wp-block-navigation-item.has-child:hover:after {
     color: var(--wp--preset--color--custom-link); }
   .main-menu .wp-block-navigation-item.item-apply-to-speak:before {
-    color: "#ffdb53";
+    color: "inherit";
     font-family: dashicons;
     content: "";
     display: inline-block;
@@ -415,6 +415,8 @@ body.admin-bar #tix {
     font-size: 20px;
     vertical-align: top;
     text-align: center; }
+  .main-menu .wp-block-navigation-item.item-apply-to-speak:hover:before {
+    color: var(--wp--preset--color--custom-link); }
 
 .main-menu .wp-block-navigation-item__content:hover,
 .main-menu a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {

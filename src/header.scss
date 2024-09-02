@@ -15,15 +15,17 @@
 	}
 
 	.wd4d-title {
-		@include neonify();
-		@include caret();
-
 		a {
 			text-decoration: none;
+			padding: 16px 32px;
+			white-space: nowrap;
 
 			&:hover {
 				@include neonify( var( --wp--preset--color--custom-light-green ) );
 			}
+
+			@include neonify();
+			@include caret();
 		}
 	}
 
@@ -44,28 +46,42 @@
 		padding-top: 1px;
 		padding-bottom: 1px;
 		position: relative;
-		padding-right: 16px;
+		margin: 1px;
 
 		// Add a chevron to the item when it has a submenu
-		&.has-child {
+		&.has-child > .wp-block-navigation-item__content {
+			padding-right: 16px;
+
 			&:after {
 				@include dashicon( "\f140", "inherit" );
-				text-shadow: 0 0 3px var( --wp--preset--color--custom-black );
-				position: absolute;
-				top: 50%;
-				margin-top: -10px;
-				right: 12px;
+				margin-left: 4px;
 			}
+		}
+		
+		// Apply top speak icon
+		&.item-apply-to-speak {
+			.wp-block-navigation-item__content {
+				&:before {
+					@include dashicon( "\f488", "inherit" );
+				}
 
-			&:hover:after {
-				color: var( --wp--preset--color--custom-link );
+				.wp-block-navigation-item__label {
+					margin-left: 8px;
+				}
 			}
 		}
 	}
 
-	.wp-block-navigation-item__content:hover,
-	a.wp-block-navigation-item__content .wp-block-navigation-item__label:hover {
-		color: var( --wp--preset--color--custom-link );
+	a.wp-block-navigation-item__content {
+		align-items: center;
+
+		// Tweak the appearance of the menu items when hovered
+		&:hover,
+		.wp-block-navigation-item__label:hover {
+			color: var( --wp--preset--color--custom-link );
+			text-decoration: none;
+			background-color: #002917;
+		}
 	}
 
 	.menu-tickets {

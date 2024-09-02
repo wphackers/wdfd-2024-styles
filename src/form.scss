@@ -12,7 +12,7 @@
 		background-color: var( --wp--preset--color--custom-dark );
 		border: 1px solid var( --wp--preset--color--custom-dark );
 		font-family: var( --wp--preset--font-family--chivo-mono );
-		font-size: var(--wp--preset--font-size--medium) !important;
+		font-size: var( --wp--preset--font-size--medium ) !important;
 	}
 
 	button,
@@ -28,5 +28,51 @@
 		padding-left: 1.6rem;
 		text-decoration: none;
 		border-radius: 14px;
+	}
+}
+
+/*
+ * Contact Form
+ */
+ .contact-form {
+	.contact-form__input-error {
+		color: var( --wp--preset--color--custom-error-text );
+	}
+
+	input:active,
+	input:focus-visible,
+	input:focus {
+		outline-width: 1px;
+		outline-color: var( --wp--preset--color--custom-dark-green );
+		outline-offset: -1px;
+	}
+
+	button:active,
+	button:focus-visible,
+	button:focus {
+		outline-width: 1px;
+		outline-color: var( --wp--preset--color--custom-dark-green );
+		outline-offset: -1px;
+	}
+
+	input[type="radio"]:checked {
+		color: var( --wp--preset--color--custom-relevant-2 );
+	}
+}
+
+.contact-form,
+.wp-block-jetpack-contact-form-container,
+.wp-block-jetpack-contact-form {
+	.contact-form-submission {
+		padding: 0
+	};
+
+	.contact-form__error {
+		text-align: left;
+		font-style: 0.8em;
+	}
+
+	.field-value {
+		color: var( --wp--preset--color--custom-dark-green );
 	}
 }

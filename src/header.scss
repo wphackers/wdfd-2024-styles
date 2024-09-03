@@ -62,11 +62,18 @@
 		&.item-apply-to-speak {
 			.wp-block-navigation-item__content {
 				&:before {
-					@include dashicon( "\f488", "inherit" );
+					@include dashicon( "\f488", var( --wp--preset--color--custom-relevant-2 ) );
+					transition: transform 200ms ease-in-out;
 				}
 
 				.wp-block-navigation-item__label {
 					margin-left: 8px;
+				}
+
+				&:hover {
+					&:before {
+						transform: scale( 3 ) translateX( -4px );
+					}
 				}
 			}
 		}

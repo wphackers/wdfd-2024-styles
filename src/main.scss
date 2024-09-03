@@ -483,8 +483,7 @@ input[type="submit"]:hover {
  * Social links
  */
 .wp-block-social-links .wp-block-social-link {
-	color: var( --wp--preset--color--custom-relevant-3 );
-	filter: grayscale( 0.8 );
+	filter: sepia( 1 ) hue-rotate( 80deg );
 	transition: filter 0.5s ease;
 	&:hover {
 		filter: none;

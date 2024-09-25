@@ -34,6 +34,46 @@
 	 .tix_tickets_table.tix-tickets-list {
 		@include table-to-two-columns();
 		@include grid-3x3();
+
+		position: relative;
+		padding-bottom: 80px;
+
+		.tix-discount {
+			display: none;
+		}
+
+		tr.tix-row-coupon {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			color: var( --wp--preset--color--custom-info-text );
+
+			td {
+				font-size: 18px;
+				line-height: 1.5;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0 16px;
+				flex-wrap: wrap;
+				padding: 12px 0;
+
+				strong {
+					color: #76ff25;
+					margin-left: 4px;
+					animation: party 2s ease-in-out 5;
+					font-size: 20px;
+				}
+
+				input[ type="submit" ] {
+					font-size: 16px !important;
+					height: 40px;
+					line-height: 1em;
+					padding: 0 16px;
+				}
+			}
+		}
 	}
 
 	/**
@@ -167,6 +207,44 @@
 			}
 		}
 	}
+
+	.camptix-invoice-toggle-wrapper {
+		label {
+			margin-bottom: 16px;
+		}
+	}
+
+	.tix_invoice_table {
+		@include grid-3x3();
+		margin-bottom: 16px;
+		width: 100%;
+
+		thead {
+			border-bottom: 1px solid var( --wp--preset--color--contrast-3 );
+			background-color: var( --wp--preset--color--custom-dark );
+		}
+
+		th, td {
+			padding: 8px;
+			white-space: nowrap;
+		}
+
+		td {
+			text-align: right;
+
+			input {
+				width: 100%;
+			}
+
+			&.tix-column-description {
+				text-align: left;
+			}
+		}
+
+		.tix-row-total {
+			font-size: 1.2em;
+		}
+	}
 }
 
 .tix-error,
@@ -251,5 +329,15 @@
 	.page-slug-tickets .entry-content {
 		padding-left: 8px;
 		padding-right: 8px;
+	}
+}
+
+@keyframes party {
+	0% {
+		filter: hue-rotate( 360deg );
+	}
+
+	100% {
+		filter: hue-rotate( 0deg );
 	}
 }

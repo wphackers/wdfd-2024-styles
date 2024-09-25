@@ -483,7 +483,7 @@ input[type="submit"]:hover {
  * Social links
  */
 .wp-block-social-links .wp-block-social-link {
-	filter: sepia( 1 ) hue-rotate( 80deg );
+	filter: sepia( 1 ) hue-rotate( 70deg );
 	transition: filter 0.5s ease;
 	&:hover {
 		filter: none;
@@ -515,6 +515,7 @@ input[type="submit"]:hover {
 /**
  * Page: News
  */
+.single-wcb_speaker,
 .single-post {
 	.blog-post-image img {
 		filter: grayscale( 0.5 ) contrast( 2 ) blur( 1px ) hue-rotate( 45deg );
@@ -538,6 +539,12 @@ input[type="submit"]:hover {
 			margin-left: -150px !important;
 		
 		}
+	}
+}
+
+.single-wcb_speaker .entry-content {
+	.i18n-badge {
+		top: -70px;
 	}
 }
 

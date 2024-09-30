@@ -272,6 +272,10 @@
 }
 
 @media ( max-width: 600px ) {
+	.entry-content {
+		padding: 0;
+	}
+
 	#tix {
 		min-width: auto;
 		/**

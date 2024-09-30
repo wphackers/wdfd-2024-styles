@@ -1,3 +1,5 @@
+@import url( "https://s.w.org/wp-includes/css/dashicons.css" );
+
 @import './common.scss';
 @import './tickets.scss';
 @import './header.scss';
@@ -104,6 +106,40 @@
 				opacity: 0;
 			}
 		}
+	}
+}
+
+@media ( max-width: 600px ) {
+	.wp-block-cover.announcement {
+		margin: 0;
+	}
+}
+
+/*
+ * Create a blinking effect on the sponsor logo
+ */
+
+.sponsor-hearts {
+	p {
+		opacity: 0.5;
+	}
+
+	.sponsor-heart-available {
+		animation: blink 1s infinite linear;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
 

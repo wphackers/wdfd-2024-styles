@@ -1,0 +1,26 @@
+#tix-attendees {
+	max-width: 960px !important;
+	margin: 0 auto !important;
+
+	.tix-attendee-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			display: flex;
+			height: auto;
+			align-items: center;
+
+			.tix-field {
+				font-size: 24px;
+				margin: 0 0 0 16px;
+			}
+		}
+
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+	}
+}

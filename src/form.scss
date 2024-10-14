@@ -43,6 +43,7 @@
 	input:focus-visible,
 	input:focus {
 		outline-width: 1px;
+		color: var( --wp--preset--color--custom-dark-green );
 		outline-color: var( --wp--preset--color--custom-dark-green );
 		outline-offset: -1px;
 	}

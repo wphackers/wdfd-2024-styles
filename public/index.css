@@ -851,10 +851,7 @@ input[type="submit"]:hover {
  * Schedule page
  */
 .wordcamp-schedule .wordcamp-schedule__column-header {
-  background-color: var(--wp--preset--color--base-2); }
-
-.wordcamp-schedule .is-column-time {
-  background-color: var(--wp--preset--color--base-2); }
+  background-color: var(--wp--preset--color--base) !important; }
 
 /**
  * Schedule page

@@ -318,20 +318,212 @@ input[type="submit"]:hover {
 	margin: 0;
 }
 
-/*
+/**	
  * Schedule page
  */
-.wordcamp-schedule {
+ .wordcamp-schedule__day {
+	background-color: var( --wp--preset--color--custom-dark );
+	padding: 8px;
+	grid-gap: 4px !important;
+
+	.wordcamp-schedule__time-slot-header {
+		background-color: var( --wp--preset--color--custom-dark );
+		border: 1px solid var( --wp--preset--color--base );
+	}
+
+	.is-type-session {
+		border: 1px dotted #0a0 !important;
+
+		* {
+			position: relative;
+			z-index: 10;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-size: 150%;
+			background-position: left;
+			filter: sepia(0.3) hue-rotate(65deg) opacity(0.05) contrast(5) blur(2px);
+			z-index: 1;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image:
+				linear-gradient(to right, var(--wp--preset--color--custom-dark) 1px, transparent 1px),
+				linear-gradient(to bottom, var(--wp--preset--color--custom-dark) 1px, transparent 1px);
+			background-size: 3px 3px, 3px 3px;
+			background-position: 0 0, 0 0;
+			opacity: .05;
+			z-index: 2;
+		}
+	}
+
+	.wcb-favourite-session {
+		background-color: #092f10;
+	}
+
+	&:hover .wordcamp-schedule__session {
+		filter: grayscale( 0.9 );
+		transition: filter 1s ease;
+	}
+
 	.wordcamp-schedule__column-header {
-		background-color: var( --wp--preset--color--custom-dark ) !important;
+		background-color: #1e2f1a !important;
+	}
+
+	.has-speaker-milana-cap::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/7cfb6116e14bd745841bfbd7b372dc8c?s=512&d=mm&r=g' );
+	}
+
+	.has-speaker-shadi-sharaf::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/8c45f0a6fb9f5e39cec628b299c2ce13?s=512&d=mm&r=g' );
+		background-position: left 20%;
+	}
+
+	.has-speaker-arunas-liuiza::before {
+		background-image: url( 'https://events.wordpress.org/lisboa/2024/wordpress-day-developers/files/2024/09/arunas-liuiza-1.5-1.jpeg' );
+		filter: sepia(0.3) hue-rotate(65deg) opacity(0.2) contrast(3) blur(2px);
+	}
+
+	.has-speaker-cyrille-coquard::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/f9a804cdc96d852307212c8d3fffc624?s=512&d=mm&r=g' );
+	}
+	.has-speaker-uros-tasic::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/e0054b1ac8768405a8f684827e6f6a81?s=512&d=mm&r=g' );
+		background-position: -50%;
+	}
+
+	.has-speaker-sarah-norris::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/3fb0338256ffd0a88427ea3638536c08?s=512&d=mm&r=g' );
+	}
+
+	.has-speaker-miguel-fonseca::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/7e89b8105f7e05afa2872e411d3f76ad?s=512&d=mm&r=g' );
+		filter: sepia(0.3) hue-rotate(65deg) opacity(0.1) contrast(3) blur(2px);
+		background-position: 50% 50%;
+	}
+
+	.has-speaker-michal-czaplinski::before {
+		background-image: url( 'https://secure.gravatar.com/avatar/160475e57835d6b02f6bfadbb05d853c?s=512&d=mm&r=g' );
 	}
 }
 
-/**
- * Schedule page
- */
-.wordcamp-schedule__day {
-	background-color: var( --wp--preset--color--base-2 );
+
+.show-email-form,
+.entry-content a.show-email-form {
+	color: var( --wp--preset--color--custom-link );
+	display: flex !important;
+	gap: 4px;
+	background-color: var( --wp--preset--color--custom-dark );
+
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	padding: 4px 8px;
+	margin: 0;
+	border: px dotted var( --wp--preset--color--custom-dark );
+
+	&:hover {
+		background-color: var( --wp--preset--color--custom-link );
+		color: var( --wp--preset--color--custom-dark );
+		border: none;
+		box-shadow: 0 0 2px var( --wp--preset--color--custom-dark );
+	}
+}
+
+.email-form {
+	background-color: #010;
+	color: var( --wp--preset--color--contrast );
+	margin-bottom: 4px;
+	border-radius: 6px;
+
+	.fav-session-share-tab {
+		background-color: #042;
+		color: #0d6;
+		border-radius: 6px 6px 0 0;
+		border: 1px dotted var( --wp--preset--color--custom-link );
+		border-bottom: 0px;
+		box-sizing: border-box;
+
+		div {
+			&.active {
+				background-color: #010;
+				color: #0c6;
+			}
+			&:hover {
+				background-color: #030;
+			}
+		}
+	}
+
+	.fav-session-share-tabcontent {
+		background-color: #010;
+		color: var( --wp--preset--color--contrast );
+		border-radius: 0 0 8px 8px;
+		border: 1px dotted var( --wp--preset--color--custom-link );
+		border-top: 0px;
+		box-sizing: border-box;
+	}
+
+	#fav-sessions-email-address,
+	input {
+		box-sizing: border-box;
+		padding: 4px 8px;
+		color: var( --wp--preset--color--custom-link );
+		background-color: #010;
+		border: 1px solid #010;
+		font-family: var( --wp--preset--font-family--chivo-mono );
+		font-size: var(--wp--preset--font-size--medium );
+		border: 1px solid var( --wp--preset--color--custom-link );
+		border-radius: 4px;
+		margin: 8px 0;
+	}
+
+	button,
+	input[type="submit"] {
+		gap: .5em;
+		padding: 4px 8px;
+		text-decoration: none;
+		border-radius: 4px;
+		font-size: 16px !important;
+		background-color: #000;
+		border: 1px solid var( --wp--preset--color--custom-link );
+		color: var( --wp--preset--color--custom-link );
+	}
+}
+
+body:not(.block-editor-page) {
+	.wordcamp-schedule:not(.is-style-single-column-layout) {
+		.wordcamp-schedule__time-slot-header {
+			box-shadow: 0 0 1px 1px var( --wp--preset--color--base-2 );
+		}
+		.wordcamp-schedule__session {
+			box-shadow: 0 0 1px 1px var( --wp--preset--color--base-2 );
+			border: 1px solid var( --wp--preset--color--custom-dark );
+
+			&:hover {
+				border: 1px solid var( --wp--preset--color--custom-link );
+				box-shadow: 0 0 2px var( --wp--preset--color--custom-link );
+				transition: filter 1s ease;
+				filter: none;
+
+				&::before {
+					filter: sepia(0.5) hue-rotate(55deg) opacity(0.02) contrast(5);
+				}
+			}
+		}
+	}
 }
 
 #wordcamp-schedule__day-2024-10-19-tracks-all {
@@ -446,6 +638,16 @@ input[type="submit"]:hover {
 	 */
 	&:hover .wp-block-post:not( :hover ) {
 		filter: grayscale( 1 ) opacity( 0.4 ) blur( 1px );
+	}
+}
+
+/*
+ * Interview styles
+ */
+ .interview-wrapper {
+	.interview-group-block {
+		top: calc( 50px + var( --wp-admin--admin-bar--position-offset, 0px ) );
+		z-index: 8;
 	}
 }
 
